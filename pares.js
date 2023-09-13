@@ -3,6 +3,7 @@ $(document).ready(function(){
     var par=false;
     var carta2="";
     var total_pares=0;
+    var total_intentos=0;
     $('img').click(function(e){
         var estado= $(this).attr('data-estado')
         var nombre_imagen= $(this).attr('data-id')
@@ -41,16 +42,32 @@ $(document).ready(function(){
                 par=true
                 total_pares++
                 $("#total_pares").html(total_pares)
-                carta1="";
-                carta2="";
+             }else{
+                total_intentos++    
              }
         }
-        if(total_pares==8){
+        if(total_intentos>=5){
+            alert("Excediste el número de intentos")
             $('img').each(function() {
                 $(this).attr('src','fotos-pares/tapar.jpg')
                 $(this).attr('data-estado','0')
             });
             total_pares=0
+            total_intentos=0
+            $("#total_pares").html(total_pares)
+            par=false
+            carta1=""
+            carta2=""
+            return;
+        }
+        if(total_pares==8){
+            alert("Felecidades, has ganado el juego")
+            $('img').each(function() {
+                $(this).attr('src','fotos-pares/tapar.jpg')
+                $(this).attr('data-estado','0')
+            });
+            total_pares=0
+            total_intentos=0
             par=false
             carta1=""
             carta2=""
