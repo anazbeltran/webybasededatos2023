@@ -2,10 +2,12 @@ $(document).ready(function () {
     var valor_dado1 = 0;
     var total1 = 0;
     var quedo1 = false;
+    var intentos1 = 0;
 
     var valor_dado2 = 0;
     var total2 = 0;
     var quedo2 = false;
+    var intentos2 = 0;
 
 
     $("#boton1").on("click", function () {
@@ -15,10 +17,15 @@ $(document).ready(function () {
             $("#dado1").attr("src", "imagenesproyecto/carta" + valor_dado1 + ".PNG");
             $("#numero1").html(valor_dado1);
 
+            intentos1++
+
             total1 += valor_dado1;
             $("#total1").html("Acumuladas: " + total1);
         }
-        if(!total1 == )
+        if(intentos1 == 5){
+            boton1.disabled=true;
+        } 
+        if(!total1 == 0);
     });
 
     $("#mequedo1").on("click", function () {
@@ -37,8 +44,13 @@ $(document).ready(function () {
             $("#dado2").attr("src", "imagenesproyecto/carta" + valor_dado2 + ".PNG");
             $("#numero2").html(valor_dado2);
 
+            intentos2++
+
             total2 += valor_dado2;
             $("#total2").html("Acumuladas: " + total2);
+        }
+        if(intentos2 == 5){
+            boton2.disabled=true;
         }
     });
 
@@ -50,6 +62,7 @@ $(document).ready(function () {
         $("#numero2").hide();
         Ganador();
     });
+
 
     function Ganador() {
         if (quedo1 && quedo2) {
