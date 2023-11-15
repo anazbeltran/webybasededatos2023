@@ -16,9 +16,11 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="inicio.php">Inicio</a></li>
             <li><a class="dropdown-item" href="consultarAlumnos.php">Consultar alumnos</a></li>
+            <li><a class="dropdown-item" href="consultarMaterias.php">Consultar materias</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="RegistrarAlumno.php">Registar alumno</a></li>
             <li><a class="dropdown-item" href="RegistrarMaterias.php">Registar Materia</a></li>
+            <li><a class="dropdown-item" href="asignarMaterias.php">Asignar Materia</a></li>
           </ul>
         </li>
       </ul>

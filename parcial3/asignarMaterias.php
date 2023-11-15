@@ -21,13 +21,13 @@ $datos_alumnos = $conexion->query($sql_materias);
         <div class="row">
             <div class="col-12 card p-4 m-2">
                 <h1>Asignar Materias a un alumno </h1>
-                <form action="" class="action">
+                <form action="guardarAignación.php" method="POST">
                     <label for="">Alumno:</label>
                     <select name="alumno" class="form-control">
                         <option value="">Selecciona a un alumno:</option>
                 <?php if($datos_alumnos->num_rows > 0){
-                    while($registro = $datos->fetch_assoc()){}
-                } ?>
+                    while($registro = $datos->fetch_assoc()){
+               } }?>  
                 </select
               </form>
             </div>
