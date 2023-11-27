@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2023 a las 03:11:16
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 27-11-2023 a las 01:07:43
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,7 +35,7 @@ CREATE TABLE `alumnos` (
   `edad` int(11) NOT NULL,
   `turno` varchar(10) NOT NULL,
   `sexo` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `alumnos`
@@ -44,9 +43,36 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`id`, `nombre`, `numero_control`, `semestre`, `edad`, `turno`, `sexo`) VALUES
 (1, 'Luis Carlos', '111111', 5, 18, 'MATUTINO', 1),
-(2, 'Juan', '98798789', 4, 19, 'Matutino', 1),
 (3, 'Maria', '576576576', 2, 15, 'Vespertino', 0),
-(4, 'Prueba', '234234234', 4, 20, 'MATUTINO', 1);
+(6, 'Ana Zoe Beltran Zapien', '356478923091', 5, 17, 'VESPERTINO', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumnos_materias`
+--
+
+CREATE TABLE `alumnos_materias` (
+  `id` int(11) NOT NULL,
+  `materias_nombre` int(11) NOT NULL,
+  `alumnos_materias` int(11) NOT NULL,
+  `alumnos_id` int(11) NOT NULL,
+  `materia_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `alumnos_materias`
+--
+
+INSERT INTO `alumnos_materias` (`id`, `materias_nombre`, `alumnos_materias`, `alumnos_id`, `materia_id`) VALUES
+(1, 0, 0, 1, 1),
+(2, 0, 0, 6, 1),
+(3, 0, 0, 6, 2),
+(4, 0, 0, 6, 3),
+(5, 0, 0, 6, 4),
+(6, 0, 0, 3, 1),
+(7, 0, 0, 3, 2),
+(8, 0, 0, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -59,17 +85,17 @@ CREATE TABLE `materias` (
   `nombre` varchar(100) NOT NULL,
   `semestre` int(11) NOT NULL,
   `especialidad` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `materias`
 --
 
 INSERT INTO `materias` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
-(1, 'FISICA', 5, 'PROGRAMACION'),
-(2, 'CALCULO', 5, 'PROGRAMACION'),
-(3, 'INGLES', 5, 'PROGRAMACION'),
-(4, 'CTSYV', 5, 'PROGRAMACION');
+(1, 'CALCULO', 5, 'PROGRMACION'),
+(2, 'INGLES', 5, 'PROGRAMACION'),
+(3, 'CTSYV', 5, 'PROGRAMACION'),
+(4, 'FISICA', 5, 'PROGRAMACION');
 
 --
 -- Índices para tablas volcadas
@@ -79,6 +105,12 @@ INSERT INTO `materias` (`id`, `nombre`, `semestre`, `especialidad`) VALUES
 -- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `alumnos_materias`
+--
+ALTER TABLE `alumnos_materias`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -95,7 +127,13 @@ ALTER TABLE `materias`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `alumnos_materias`
+--
+ALTER TABLE `alumnos_materias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `materias`

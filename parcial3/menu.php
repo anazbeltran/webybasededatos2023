@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a7201f;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #854442 ;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">CETIS 107</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,20 +11,29 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Opciones
+            Alumnos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="inicio.php">Inicio</a></li>
             <li><a class="dropdown-item" href="consultarAlumnos.php">Consultar alumnos</a></li>
-            <li><a class="dropdown-item" href="consultarMaterias.php">Consultar materias</a></li>
+            <li><a class="dropdown-item" href="consultarAlumnosMaterias.php">Consultar Alumnos Materias</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="RegistrarAlumno.php">Registar alumno</a></li>
-            <li><a class="dropdown-item" href="RegistrarMaterias.php">Registar Materia</a></li>
-            <li><a class="dropdown-item" href="asignarMaterias.php">Asignar Materia</a></li>
+            <li><a class="dropdown-item" href="RegistrarAlumno.php">Registar alumnos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Materias
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="inicio.php">Inicio</a></li>
+            <li><a class="dropdown-item" href="consultarMaterias.php">Consultar materias</a></li>
+            <li><a class="dropdown-item" href="asignarMaterias.php">Asignar Materias</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="RegistrarMaterias.php">Registar materias</a></li>
           </ul>
         </li>
       </ul>
-      
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
         <button class="btn btn-outline-secondary" type="submit">Buscar</button>
